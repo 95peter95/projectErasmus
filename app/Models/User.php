@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class User extends Model
 {
 
-    protected $fillable = ['first_name','last_name','email','password','user_type'];
+    protected $fillable = ['first_name','last_name','email','password'];
 
     public function UserMobilities()
     {

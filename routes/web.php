@@ -11,7 +11,11 @@
 |
 */
 
-Route::get('/', 'MobilityController@index');
+Route::get('/', 'MobilityController@index')->name('homepage');
 
 Route::get('user/{id}', 'UserController@show');
 Route::get('mobility/{id}', 'MobilityController@show');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
