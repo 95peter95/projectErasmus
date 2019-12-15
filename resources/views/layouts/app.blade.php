@@ -34,6 +34,8 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         <li><a href="{{ route('homepage') }}">Home</a></li>
+                        <li><a href="{{ route('form') }}">Reviews</a></li>
+                        <li><a href="{{ route('contact') }}">Contact</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -69,7 +71,9 @@
         </nav>
 
         @yield('content')
-    </div>
+
+
+
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>

@@ -9,7 +9,8 @@ class Mobility extends Model
     protected $fillable = [
     'start_date',
     'end_date',
-    'name'];
+    'name',
+    'imagelink'];
 
     public function Challenge()
     {

@@ -13,9 +13,11 @@
 
 Route::get('/', 'MobilityController@index')->name('homepage');
 
-Route::get('user/{id}', 'UserController@show');
-Route::get('mobility/{id}', 'MobilityController@show');
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/form', 'FormController@index')->name('form');
+Route::post('/form', 'FormController@insertReview')->name('form');
+
+Route::get('/contact', 'ContactController@index')->name('contact');
