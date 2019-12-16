@@ -15,8 +15,8 @@
         <tr>
             <td data-th="Product">
                 <div class="row">
-                    <div class="col-sm-3 hidden-xs"><img src="{{$mobility->imagelink}}" alt="..." class="img-responsive"/></div>
-                    <div class="col-sm-9">
+                    <div class="col-sm-6 hidden-xs"><img src="{{$mobility->imagelink}}" alt="..." class="img-responsive"/></div>
+                    <div class="col-sm-6">
                         <h4 class="nomargin">{{$mobility->name}}</h4>
                         <p>{{$mobility->text}}</p>
                     </div>
