@@ -13,7 +13,10 @@
 
 Route::get('/', 'MobilityController@index')->name('homepage');
 
+Route::get('/detail/{id}', 'MobilityController@showAction')->name('detail');
+
 Auth::routes();
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 

@@ -33,6 +33,7 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
+                        <li><img src="https://www.obcasnecas.ukf.sk/wp-content/2010/05/logo-ukf-1001x1024.jpg" width="50" height="50" alt=""></li>
                         <li><a href="{{ route('homepage') }}">Home</a></li>
                         <li><a href="{{ route('form') }}">Reviews</a></li>
                         <li><a href="{{ route('contact') }}">Contact</a></li>

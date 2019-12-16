@@ -8,16 +8,16 @@
             <div class="card mb-4 shadow-sm">
                 <div class="card-body">
                     <h5 class="card-title">{{$mobility->name}}</h5>
-                    <img class="img-thumbnail" src="{{$mobility->imagelink}}">
+                    <img src="{{$mobility->imagelink}}" height="150" >
                     <p class="card-text">{{"Start date: " . $mobility->start_date}}</p>
                     <p class="card-text">{{"End date: " . $mobility->end_date}}</p>
-                    <a href="#" class="btn btn-primary">Detail</a>
+                    <td><a class="btn btn-warning" href="{{action("MobilityController@showAction",['id' => $mobility->id])}}">Detail</a></td>
                 </div>
             </div>
         </div>
 
 @endforeach
-
+    
 @endsection
 
 

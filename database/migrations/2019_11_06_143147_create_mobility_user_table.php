@@ -18,23 +18,11 @@ class CreateMobilityUserTable extends Migration
 
             $table->boolean('ended')->default(false);
 
-            $table->unsignedInteger('user_id')->nullable()->default(null);
-            $table->foreign('user_id')
-                ->references('id')
-                ->on('users')
-                ->onDelete('set null');
+            $table->Integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
-            $table->unsignedInteger('mobility_id')->nullable()->default(null);
-            $table->foreign('mobility_id')
-                ->references('id')
-                ->on('mobilities')
-                ->onDelete('set null');
-
-            $table->unsignedInteger('university_challenge_id')->nullable()->default(null);
-            $table->foreign('university_challenge_id')
-                ->references('id')
-                ->on('university_challenges')
-                ->onDelete('set null');
+            $table->Integer('mobility_id')->unsigned();
+            $table->foreign('mobility_id')->references('id')->on('mobilities')->onDelete('cascade');
 
             $table->timestamps();
         });

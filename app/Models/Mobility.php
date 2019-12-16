@@ -10,11 +10,17 @@ class Mobility extends Model
     'start_date',
     'end_date',
     'name',
-    'imagelink'];
+    'imagelink',
+    'text'];
 
-    public function Challenge()
+    public function user()
     {
-        return $this->belongsTo('App\Challenge');
+        return $this->belongsTo(User::class);
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
     }
 
 }

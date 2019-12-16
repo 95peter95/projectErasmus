@@ -7,16 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class User extends Model
 {
 
-    protected $fillable = ['first_name','email','password'];
+    protected $fillable = ['name','email','password'];
 
-    public function UserMobilities()
+    public function reviews()
     {
-        return $this->hasMany('App\UserMobility');
+        return $this->hasMany(Review::class);
     }
 
-    public function Reviews()
+    public function mobilities()
     {
-        return $this->hasMany('App\Review');
+        return $this->hasMany(Mobility::class);
     }
 
 }

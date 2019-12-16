@@ -4,6 +4,7 @@
 namespace App\Http\Controllers;
 use App\Models\Review;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FormController extends Controller
 {
@@ -20,10 +21,12 @@ class FormController extends Controller
 
         $text = $request->input('text');
         $picture = $request->input('picture');
-        $author = $request->input('author');
+        $author = Auth::user()->name;
+        $user_id = Auth::user()->id;
 
         $review = new Review();
         $review->author = $author;
+        $review->user_id = $user_id;
         $review->text = $text;
         $review->picture = $picture;
         $review->save();

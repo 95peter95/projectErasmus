@@ -8,7 +8,7 @@
                         <form method="post" action="{{ action('FormController@insertReview') }}">
                         <div class="form-group">
                             <label for="exampleFormControlTextarea1">Author</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" name="author" >{{$user = Auth::user()->name}}</textarea>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" name="author" readonly>{{$user = Auth::user()->name}}</textarea>
 
                             <label for="exampleFormControlTextarea1">Review</label>
                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="text"></textarea>
@@ -44,12 +44,20 @@
         <div class="row">
             @foreach($reviews as $review)
                 <div class="col-sm">
-                    <img class="img-thumbnail" src="{{$review->picture}}">
-
                     <p>{{"Author: " . $review->author}}</p>
 
-                    <p>{{"review " . $review->text}}</p>
+                    <div class="mb-1 text-muted">
+                        <p>{{"Date: " . $review->created_at}}</p>
+                        </div>
+
+
+                    <p>{{"Text: " . $review->text}}</p>
+
+                    <img class="img-thumbnail" src="{{$review->picture}}">
                 </div>
+                <br>
+                <hr class="style3">
+                <br>
             @endforeach
         </div>
 @endsection

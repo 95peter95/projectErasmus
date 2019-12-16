@@ -16,17 +16,9 @@ class CreateReviewsTable extends Migration
         Schema::create('reviews', function (Blueprint $table) {
                 $table->increments('id');
 
-                $table->unsignedInteger('user_id')->nullable()->default(null);
-                $table->foreign('user_id')
-                ->references('id')
-                ->on('users')
-                ->onDelete('set null');
+                $table->Integer('user_id')->unsigned();
+                $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
-                 $table->unsignedInteger('mobility_id')->nullable()->default(null);
-                 $table->foreign('mobility_id')
-                ->references('id')
-                ->on('mobilities')
-                ->onDelete('set null');
 
                 $table->string('author');
                 $table->string('text');

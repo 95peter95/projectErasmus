@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Review;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -13,4 +14,5 @@ class UserController extends Controller
         $user = User::find($id);
         echo $user->first_name. " " . $user->last_name."<br>";
     }
+
 }

@@ -19,6 +19,12 @@ class CreateMobilitiesTable extends Migration
             $table->date('end_date');
             $table->string('name');
             $table->string('imagelink');
+            $table->string('text');
+
+            $table->Integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
+
             $table->rememberToken();
             $table->timestamps();
         });

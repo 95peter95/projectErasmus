@@ -17,11 +17,11 @@ class CreateChallengesTable extends Migration
             $table->increments('id');
             $table->string('type');
 
-            $table->unsignedInteger('mobility_id')->nullable()->default(null);
-            $table->foreign('mobility_id')
-                ->references('id')
-                ->on('mobilities')
-                ->onDelete('set null');
+            $table->Integer('mobility_id')->unsigned();
+            $table->foreign('mobility_id')->references('id')->on('mobilities')->onDelete('cascade');
+
+
+
 
             $table->string('description');
             $table->string('image');
